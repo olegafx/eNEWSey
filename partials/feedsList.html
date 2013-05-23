@@ -1,0 +1,32 @@
+<div class="container-fluid" data-ng-controller="FeedCtrl">
+    <header class="row-fluid">
+        <h1>eNEWSey. Новостная лента Красноярска.</h1>
+    </header>
+    <div class="row-fluid">
+        <ul class="feed-list unstyled">
+            <li>
+                <a class="label label-tag" href="" title="Показать все новости" data-ng-click="chooseFeed()">все новости</a>
+            </li>
+            <li data-ng-repeat="feed in feeds">
+                <a class="label label-tag" href="" title="Показать новости {{feed.author}}" data-ng-click="chooseFeed(feed.author)">{{feed.author}}</a>
+            </li>
+        </ul>
+        <div class="input-prepend span12">
+            <span class="add-on"><i class="icon-search"></i></span>
+            <input class="span6" type="text" placeholder="поиск" data-ng-model="search.$"/>
+        </div>
+
+        <ul class="content-list unstyled">
+            <li data-ng-repeat="article in articles | filter:predicate | filter:search | orderBy:'-date'"
+                data-ng-animate="{enter: 'fadeIn', leave: 'fadeOut'}">
+                <h2><a target="_blank" data-ng-href="{{article.link}}">{{article.title}}</a></h2>
+
+                <p class="text-left">{{article.content}}</p>
+                <span data-ng-click="chooseFeed(article.author)">
+                    <a href="" class="label label-tag" title="Показать новости {{article.author}}">{{article.author}}</a>
+                </span>
+                <span class="label label-time">{{article.date | date:'d MMMM, H:mm'}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
