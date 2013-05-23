@@ -2,8 +2,8 @@
 
 /* Controllers */
 
-angular.module('eNEWSey.controllers', [])
-    .controller('FeedCtrl', ['$scope', 'FeedService', function ($scope, Feed) {
+angular.module('eNEWSey.controllers', ['analytics'])
+    .controller('FeedCtrl', ['$scope', 'FeedService', 'analytics', function ($scope, Feed) {
         $scope.feeds = Feed.feedList();
 
         $scope.articles = [];
