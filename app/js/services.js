@@ -14,6 +14,14 @@ angular.module('eNEWSey.services', [])
                     {
                         author: 'newslab',
                         link: 'http://newslab.ru/news/all/rss'
+                    },
+                    {
+                        author: 'sibnovosti',
+                        link: 'http://krsk.sibnovosti.ru/news/rss_for_users.xml'
+                    },
+                    {
+                        author: 'yarsk',
+                        link: 'http://www.yarsk.ru/rss/news/'
                     }
                 ];
             },
