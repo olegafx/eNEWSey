@@ -21,7 +21,7 @@
 
     <div class="row-fluid">
         <ul class="content-list unstyled">
-            <li data-ng-repeat="article in articles | filter:predicate | filter:search | orderBy:'-date'"
+            <li data-ng-repeat="article in articles | filter:{author:predicate} | filter:search | orderBy:'-date'"
                 data-ng-animate="{enter: 'fadeIn', leave: 'fadeOut'}">
                 <h2><a target="_blank" data-ng-href="{{article.link}}">{{article.title}}</a></h2>
 
