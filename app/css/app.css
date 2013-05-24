@@ -74,6 +74,7 @@ h2 {
 .feed-list>li {
     float: left;
     margin: 0 .15rem;
+    line-height: 1.75rem;
 }
 
 .content-list>li {
