@@ -15,6 +15,7 @@ angular.module('eNEWSey.controllers', ['analytics'])
 
                     article.author = feed.author;
                     article.content = data.content;
+                    (article.content === "empty") ? article.content = '' : '';
                     article.date = getTimestamp(data.publishedDate);
                     article.link = data.link;
                     article.title = data.title;
