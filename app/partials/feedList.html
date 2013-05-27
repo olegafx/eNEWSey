@@ -25,7 +25,7 @@
                 data-ng-animate="{enter: 'fadeIn', leave: 'fadeOut'}">
                 <h2><a target="_blank" data-ng-href="{{article.link}}">{{article.title}}</a></h2>
 
-                <p class="text-left" data-ng-bind-html="article.content" ng-show="article.content"></p>
+                <p class="text-left" data-ng-bind-html="article.content" data-ng-show="article.content"></p>
                 <span data-ng-click="chooseFeed(article.author)">
                     <a href="" class="label label-tag"
                        title="Показать новости {{article.author}}">{{article.author}}</a>
