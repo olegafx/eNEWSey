@@ -80,15 +80,41 @@ h2 {
 .content-list>li {
     border-bottom: 1px solid #ccc;
     margin: .8rem 0;
-    padding: 0 1.1rem .75rem 1.1rem;
+    padding: 0 1.1rem .75rem 1rem;
 }
 
 .row-fluid [class*="span"] {
-    margin-left: .8rem;
+    margin-left: 1rem;
+}
+
+.input-prepend input[type="text"] {
+    width: 12.5rem;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.input-prepend input[type="text"]:focus {
+    width: 25rem;
 }
 
 div.input-prepend {
     margin: 1rem 0 0 .8rem;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .input-prepend input[type="text"] {
+        width: 80%;
+        -webkit-transition: all .2s linear;
+        -moz-transition: all .2s linear;
+        -o-transition: all .2s linear;
+        transition: all .2s linear;
+    }
+
+    .input-prepend input[type="text"]:focus {
+        width: 80%;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 640px) {
