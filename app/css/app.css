@@ -68,7 +68,7 @@ h2 {
 }
 
 .feed-list.unstyled {
-    margin: 0 1rem;
+    margin: 0 .8rem;
 }
 
 .feed-list>li {
@@ -83,6 +83,22 @@ h2 {
     padding: 0 1.1rem .75rem 1.1rem;
 }
 
-.input-prepend {
-    margin: 1rem 0;
+.row-fluid [class*="span"] {
+    margin-left: .8rem;
+}
+
+div.input-prepend {
+    margin: 1rem 0 0 .8rem;
+}
+
+@media (min-width: 320px) and (max-width: 640px) {
+    .container-fluid {
+        max-width: 95%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    h1 {
+        margin: .5rem 0 .5rem .8rem;
+    }
 }
