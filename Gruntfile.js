@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg : grunt.file.readJSON('package.json'),
         jshint : {
-            files : ['Gruntfile.js', 'js/main.js'],
+            files : ['Gruntfile.js', 'app/js/*.js'],
             options : {
                 validthis : true,
                 laxcomma : true,
@@ -29,8 +29,8 @@ module.exports = function(grunt) {
         },
         concat : {
             dist : {
-                src : ['js/jquery-1.9.1.min.js', 'js/main.js'],
-                dest : 'js/concat.js'
+                src : ['app/js/*.js'],
+                dest : 'app/js/concat.js'
             }
         },
         uglify : {
@@ -41,14 +41,14 @@ module.exports = function(grunt) {
             },
             my_target : {
                 files : {
-                    'js/main.min.js' : ['js/concat.js']
+                    'app/js/main.min.js' : ['app/js/concat.js']
                 }
             }
         },
         cssmin : {
             compress : {
                 files : {
-                    "css/main.min.css" : ['css/main.css']
+                    "app/css/app.min.css" : ['app/css/main.css']
                 }
             }
         }
@@ -62,6 +62,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('test', ['jshint', 'qunit']);
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
 
 };
