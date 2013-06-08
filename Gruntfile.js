@@ -55,6 +55,14 @@ module.exports = function (grunt) {
                     "app/css/main.min.css": ['app/css/concat.css']
                 }
             }
+        },
+        watch: {
+            src: {
+                files: ['app/**/*'],
+                options: {
+                    livereload: true
+                }
+            }
         }
     });
 
