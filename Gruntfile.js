@@ -28,9 +28,13 @@ module.exports = function(grunt) {
             }
         },
         concat : {
-            dist : {
+            js: {
                 src : ['app/js/*.js'],
                 dest : 'app/js/concat.js'
+            },
+            css: {
+                src : ['app/css/*.css'],
+                dest : 'app/css/concat.css'
             }
         },
         uglify : {
@@ -48,7 +52,7 @@ module.exports = function(grunt) {
         cssmin : {
             compress : {
                 files : {
-                    "app/css/app.min.css" : ['app/css/main.css']
+                    "app/css/app.min.css" : ['app/css/concat.css']
                 }
             }
         }
@@ -58,7 +62,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-mincss');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('test', ['jshint', 'qunit']);
