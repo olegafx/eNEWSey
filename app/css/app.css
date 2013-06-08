@@ -1,4 +1,6 @@
 /* app css stylesheet */
+::-moz-selection { background:lightblue; }
+::selection { background:lightblue; }
 
 body {
     background-color: #f9fcff;
