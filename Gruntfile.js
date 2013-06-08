@@ -1,58 +1,58 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     grunt.initConfig({
-        pkg : grunt.file.readJSON('package.json'),
-        jshint : {
-            files : ['Gruntfile.js', 'app/js/*.js'],
-            options : {
-                validthis : true,
-                laxcomma : true,
-                laxbreak : true,
-                browser : true,
-                eqnull : true,
-                debug : true,
-                devel : true,
-                boss : true,
-                expr : true,
-                asi : true,
-                globals : {
-                    jQuery : true
+        pkg: grunt.file.readJSON('package.json'),
+        jshint: {
+            files: ['Gruntfile.js', 'app/js/*.js'],
+            options: {
+                validthis: true,
+                laxcomma: true,
+                laxbreak: true,
+                browser: true,
+                eqnull: true,
+                debug: true,
+                devel: true,
+                boss: true,
+                expr: true,
+                asi: true,
+                globals: {
+                    jQuery: true
                 }
             }
         },
-        qunit : {
-            all : {
-                options : {
-                    urls : ['http://localhost/tests/index.html']
+        qunit: {
+            all: {
+                options: {
+                    urls: ['http://localhost/tests/index.html']
                 }
             }
         },
-        concat : {
+        concat: {
             js: {
-                src : ['app/js/*.js', '!app/js/concat.js', '!app/js/main.min.js'],
-                dest : 'app/js/concat.js'
+                src: ['app/js/*.js', '!app/js/concat.js', '!app/js/main.min.js'],
+                dest: 'app/js/concat.js'
             },
             css: {
-                src : ['app/css/*.css', '!app/css/concat.css', '!app/css/main.min.css'],
-                dest : 'app/css/concat.css'
+                src: ['app/css/*.css', '!app/css/concat.css', '!app/css/main.min.css'],
+                dest: 'app/css/concat.css'
             }
         },
-        uglify : {
-            options : {
-                mangle : {
-                    except : ['jQuery']
+        uglify: {
+            options: {
+                mangle: {
+                    except: ['jQuery']
                 }
             },
-            my_target : {
-                files : {
-                    'app/js/main.min.js' : ['app/js/concat.js']
+            my_target: {
+                files: {
+                    'app/js/main.min.js': ['app/js/concat.js']
                 }
             }
         },
-        cssmin : {
-            compress : {
-                files : {
-                    "app/css/main.min.css" : ['app/css/concat.css']
+        cssmin: {
+            compress: {
+                files: {
+                    "app/css/main.min.css": ['app/css/concat.css']
                 }
             }
         }
