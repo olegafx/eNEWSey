@@ -45,7 +45,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        mincss : {
+        cssmin : {
             compress : {
                 files : {
                     "css/main.min.css" : ['css/main.css']
@@ -62,6 +62,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('test', ['jshint', 'qunit']);
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'mincss']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'cssmin']);
 
 };
