@@ -52,7 +52,7 @@ module.exports = function(grunt) {
         cssmin : {
             compress : {
                 files : {
-                    "app/css/app.min.css" : ['app/css/concat.css']
+                    "app/css/main.min.css" : ['app/css/concat.css']
                 }
             }
         }
