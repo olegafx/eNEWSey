@@ -38,14 +38,12 @@ module.exports = function (grunt) {
             }
         },
         uglify: {
-            options: {
-                mangle: {
-                    except: ['jQuery']
-                }
-            },
-            my_target: {
+            js: {
                 files: {
                     'app/js/main.min.js': ['app/js/concat.js']
+                },
+                options: {
+                    report: 'min'
                 }
             }
         },
